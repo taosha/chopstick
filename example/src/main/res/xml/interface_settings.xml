@@ -1,0 +1,22 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        android:defaultValue="en"
+        android:icon="@drawable/ic_language_black_24dp"
+        android:title="@string/language"
+        app:entries="@array/supported_languages"
+        app:entryValues="@array/supported_languages_values"
+        app:key="interface.language"
+        app:title="@string/choose_language" />
+
+    <ListPreference
+        android:defaultValue="14"
+        android:icon="@drawable/ic_font_black_24dp"
+        android:title="@string/font_size"
+        app:entries="@array/font_sizes"
+        app:entryValues="@array/font_sizes_values"
+        app:key="interface.font-size"
+        app:title="@string/choose_font_size" />
+
+</PreferenceScreen>

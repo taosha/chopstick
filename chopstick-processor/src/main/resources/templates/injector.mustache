@@ -1,0 +1,29 @@
+{{#if package}}
+package {{packageName}};
+{{/if}}
+
+import chopstick.Chopstick;
+
+public class {{className}} extends Injector<{{paramClassName}}> {
+
+    private final Chopstick chopstick;
+
+    public {{className}}(Chopstick chopstick){
+        this.chopstick = chopstick;
+    }
+
+    @Override
+    public void inject({{paramClassName}} target) {
+        Facade facade = chopstick.get(Facade.class);
+        {{#methods}}
+        target.{{annotation}} = facade.{{name}}();
+	    {{/methods}}
+    }
+
+    interface Facade {
+        {{#methods}}
+        @Name("{{annotation}}") {{type}} {{name}}();
+	    {{/methods}}
+    }
+
+}

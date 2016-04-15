@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        maven { url 'http://repo.spring.io/plugins-release' }
+    }
+    dependencies {
+        classpath 'org.springframework.build.gradle:propdeps-plugin:0.0.7'
+    }
+}
+
+apply plugin: 'maven'
+
+allprojects {
+    group = 'org.taosha'
+    version = '1.0'
+
+    repositories {
+        jcenter()
+        maven { url 'http://maven.taosha.org' }
+    }
+}
+
+afterEvaluate {
+    [
+            project(':chopstick'),
+            project(':chopstick-processor')
+    ].each { p ->
+        afterEvaluate {
+            rootProject.uploadArchives.dependsOn p.uploadArchives
+        }
+    }
+    uploadArchives.dependsOn configRepo
+}
+
+task('configRepo') << {
+    if (!project.ext.has('repo.url'))
+        project.ext['repo.url'] = System.console().readLine("\nPlease enter repository url: ").trim()
+
+    if (!project.ext.has('repo.user'))
+        project.ext['repo.user'] = System.console().readLine("\nPlease enter username, leave empty if no need: ").trim()
+
+    if (!project.ext.has('repo.pass'))
+        project.ext['repo.pass'] = System.console().readPassword("\nPlease enter password , leave empty if no need: ").toString()
+}

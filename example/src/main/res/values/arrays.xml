@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="supported_languages" translatable="false">
+        <item>English</item>
+        <item>汉语</item>
+    </string-array>
+    <string-array name="supported_languages_values" translatable="false">
+        <item>en</item>
+        <item>zh</item>
+    </string-array>
+    <string-array name="font_sizes">
+        <item>@string/font_normal</item>
+        <item>@string/font_small</item>
+        <item>@string/font_big</item>
+    </string-array>
+    <integer-array name="font_sizes_values">
+        <item>14</item>
+        <item>12</item>
+        <item>16</item>
+    </integer-array>
+</resources>

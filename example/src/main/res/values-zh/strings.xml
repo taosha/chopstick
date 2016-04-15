@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">筷子</string>
+    <string name="language">语言</string>
+    <string name="settings">设置</string>
+    <string name="font_size">字体大小</string>
+    <string name="font_normal">正常</string>
+    <string name="font_small">小</string>
+    <string name="font_big">大</string>
+    <string name="choose_language">选择语言</string>
+    <string name="choose_font_size">选择字体大小</string>
+    <string name="poem">山行\n唐‧杜牧\n\n远上寒山石径斜\n白云生处有人家\n停车坐爱枫林晚\n霜叶红于二月花</string>
+</resources>
